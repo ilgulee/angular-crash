@@ -36,7 +36,8 @@ export class UsersComponent implements OnInit {
         city: "Toronto",
         state: "ON"
       },
-      image:"http://lorempixel.com/output/people-q-c-600-600-1.jpg"
+      image:"http://lorempixel.com/output/people-q-c-600-600-1.jpg",
+      isActive:true
     });
     this.users.push({
       firstName: "Samho",
@@ -47,6 +48,7 @@ export class UsersComponent implements OnInit {
         city: "Seoul",
         state: "BC"
       },
+      isActive:false,
       image:'http://lorempixel.com/output/people-q-c-600-600-2.jpg'
     });
     this.users.push({
@@ -58,6 +60,7 @@ export class UsersComponent implements OnInit {
         city: "Kwangju",
         state: "PS"
       },
+      isActive:true,
       image:'http://lorempixel.com/output/people-q-c-600-600-3.jpg'
     });
     this.users.push({
@@ -69,6 +72,7 @@ export class UsersComponent implements OnInit {
         // city: "Mokpo",
         // state: "Jeolla"
       },
+      isActive:true,
       image:'http://lorempixel.com/output/people-q-c-600-600-1.jpg'
     });
     // this.addUser({

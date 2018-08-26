@@ -36,7 +36,7 @@ export class UsersComponent implements OnInit {
         city: "Toronto",
         state: "ON"
       },
-      image:"http://lorempixel.com/output/people-q-c-600-600-1.jpg",
+      registered:new Date(),
       isActive:true
     });
     this.users.push({
@@ -49,7 +49,7 @@ export class UsersComponent implements OnInit {
         state: "BC"
       },
       isActive:false,
-      image:'http://lorempixel.com/output/people-q-c-600-600-2.jpg'
+      registered:new Date()
     });
     this.users.push({
       firstName: "Doim",
@@ -61,7 +61,7 @@ export class UsersComponent implements OnInit {
         state: "PS"
       },
       isActive:true,
-      image:'http://lorempixel.com/output/people-q-c-600-600-3.jpg'
+      registered:new Date()
     });
     this.users.push({
       firstName: "Yeonhee",
@@ -73,7 +73,7 @@ export class UsersComponent implements OnInit {
         // state: "Jeolla"
       },
       isActive:true,
-      image:'http://lorempixel.com/output/people-q-c-600-600-1.jpg'
+      registered:new Date()
     });
     // this.addUser({
     //   firstName: "Simpo",

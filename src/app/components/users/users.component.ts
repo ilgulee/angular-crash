@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { User } from "../../models/User";
 
 @Component({
@@ -10,13 +10,16 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: "",
     lastName: "",
-    email:''
+    email: ""
   };
+
   users: User[];
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAddUser: boolean = false;
   showAddForm: boolean = false;
+  @ViewChild("userForm")
+  form: any;
   constructor() {
     this.users = [];
     console.log(this.users);
@@ -33,7 +36,7 @@ export class UsersComponent implements OnInit {
     this.users.push({
       firstName: "Ilgu",
       lastName: "Lee",
-      email:"lee@gmail.com",
+      email: "lee@gmail.com",
       registered: new Date(),
       isActive: true,
       hide: true
@@ -41,7 +44,7 @@ export class UsersComponent implements OnInit {
     this.users.push({
       firstName: "Samho",
       lastName: "Park",
-      email:"park@yahoo.com",
+      email: "park@yahoo.com",
       isActive: false,
       registered: new Date(),
       hide: true
@@ -49,7 +52,7 @@ export class UsersComponent implements OnInit {
     this.users.push({
       firstName: "Doim",
       lastName: "Park",
-      email:"doim@naver.com",
+      email: "doim@naver.com",
       isActive: true,
       registered: new Date(),
       hide: true
@@ -57,29 +60,26 @@ export class UsersComponent implements OnInit {
     this.users.push({
       firstName: "Yeonhee",
       lastName: "Seo",
-      email:'seo@gmail.com',
+      email: "seo@gmail.com",
       isActive: true,
       registered: new Date(),
       hide: true
     });
-  }
-  addUser() {
-    this.user.isActive = true;
-    this.user.registered = new Date();
-    this.user.hide = true;
-    this.users.unshift(this.user);
-    this.user = {
-      firstName: "",
-      lastName: "",
-      email:""
-    };
   }
 
   toggle(user: User) {
     user.hide = !user.hide;
   }
 
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit({ value, valid }: { value: User; valid: boolean }) {
+    if (!valid) {
+      console.log("Form is not valid");
+    } else {
+      value.isActive = true;
+      value.hide = true;
+      value.registered = new Date();
+      this.users.unshift(value);
+      this.form.reset();
+    }
   }
 }

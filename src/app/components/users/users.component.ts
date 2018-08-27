@@ -10,7 +10,7 @@ export class UsersComponent implements OnInit {
   users: User[];
   showExtended:boolean=true;
   loaded:boolean=false;
-  enableAddUser:boolean=true;
+  enableAddUser:boolean=false;
   constructor() {
     this.users = [];
     console.log(this.users);
@@ -37,7 +37,8 @@ export class UsersComponent implements OnInit {
         state: "ON"
       },
       registered:new Date(),
-      isActive:true
+      isActive:true,
+      hide:true
     });
     this.users.push({
       firstName: "Samho",
@@ -49,7 +50,8 @@ export class UsersComponent implements OnInit {
         state: "BC"
       },
       isActive:false,
-      registered:new Date()
+      registered:new Date(),
+      hide:true
     });
     this.users.push({
       firstName: "Doim",
@@ -61,7 +63,8 @@ export class UsersComponent implements OnInit {
         state: "PS"
       },
       isActive:true,
-      registered:new Date()
+      registered:new Date(),
+      hide:true
     });
     this.users.push({
       firstName: "Yeonhee",
@@ -73,7 +76,8 @@ export class UsersComponent implements OnInit {
         // state: "Jeolla"
       },
       isActive:true,
-      registered:new Date()
+      registered:new Date(),
+      hide:true
     });
     // this.addUser({
     //   firstName: "Simpo",
@@ -86,8 +90,11 @@ export class UsersComponent implements OnInit {
     //   }
     // });
   }
-  // addUser(user: User) {
-  //   this.users.push(user);
-  // }
+  addUser(user: User) {
+    this.users.push(user);
+  }
 
+  toggle(user:User){
+    user.hide=!user.hide;
+  }
 }

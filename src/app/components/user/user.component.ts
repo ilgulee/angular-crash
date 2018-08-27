@@ -10,16 +10,11 @@ export class UserComponent implements OnInit {
   user:User;
 
   constructor() {
-    
+
    this.user={
     firstName:'ilgu',
     lastName:'lee',
-    age:30,
-    address:{
-      street:'North York',
-      city:'Toronto',
-      state:'Toronto'
-    }
+    email:'lee@gmail.com'
    }
    }
 

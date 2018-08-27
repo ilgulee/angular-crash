@@ -10,12 +10,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: "",
     lastName: "",
-    age: null,
-    address: {
-      street: "",
-      city: "",
-      state: ""
-    }
+    email:''
   };
   users: User[];
   showExtended: boolean = true;
@@ -38,12 +33,7 @@ export class UsersComponent implements OnInit {
     this.users.push({
       firstName: "Ilgu",
       lastName: "Lee",
-      age: 45,
-      address: {
-        street: "North York",
-        city: "Toronto",
-        state: "ON"
-      },
+      email:"lee@gmail.com",
       registered: new Date(),
       isActive: true,
       hide: true
@@ -51,12 +41,7 @@ export class UsersComponent implements OnInit {
     this.users.push({
       firstName: "Samho",
       lastName: "Park",
-      age: 39,
-      address: {
-        street: "Yonge",
-        city: "Seoul",
-        state: "BC"
-      },
+      email:"park@yahoo.com",
       isActive: false,
       registered: new Date(),
       hide: true
@@ -64,12 +49,7 @@ export class UsersComponent implements OnInit {
     this.users.push({
       firstName: "Doim",
       lastName: "Park",
-      age: 60,
-      address: {
-        // street: "Samhakdo",
-        city: "Kwangju",
-        state: "PS"
-      },
+      email:"doim@naver.com",
       isActive: true,
       registered: new Date(),
       hide: true
@@ -77,26 +57,11 @@ export class UsersComponent implements OnInit {
     this.users.push({
       firstName: "Yeonhee",
       lastName: "Seo",
-      age: 40,
-      address: {
-        street: "North York"
-        // city: "Mokpo",
-        // state: "Jeolla"
-      },
+      email:'seo@gmail.com',
       isActive: true,
       registered: new Date(),
       hide: true
     });
-    // this.addUser({
-    //   firstName: "Simpo",
-    //   lastName: "Koya",
-    //   age: 100,
-    //   address: {
-    //     street: "PyongYang",
-    //     city: "NorthKorea",
-    //     state: "NK"
-    //   }
-    // });
   }
   addUser() {
     this.user.isActive = true;
@@ -106,12 +71,7 @@ export class UsersComponent implements OnInit {
     this.user = {
       firstName: "",
       lastName: "",
-      age: null,
-      address: {
-        street: "",
-        city: "",
-        state: ""
-      }
+      email:""
     };
   }
 
@@ -121,10 +81,5 @@ export class UsersComponent implements OnInit {
 
   onSubmit(e) {
     e.preventDefault();
-  }
-
-  fireEvent(e) {
-    console.log(e.type);
-    console.log(e.target.value);
   }
 }

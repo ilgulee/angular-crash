@@ -1,13 +1,16 @@
-import { User } from './../models/User';
-import { Injectable } from '@angular/core';
+import { User } from "./../models/User";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs/Observable";
+import { of } from "rxjs/observable/of";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class DataService {
-  users:User[];
+  users: User[];
+  data: Observable<any>;
   constructor() {
-    this.users=[];
+    this.users = [];
     this.users.push({
       firstName: "Ilgu",
       lastName: "Lee",
@@ -42,10 +45,10 @@ export class DataService {
     });
   }
 
-  getUsers():User[]{
-    return this.users;
+  getUsers():Observable<User[]> {
+    return of(this.users);
   }
-  addUser(user:User){
+  addUser(user: User) {
     this.users.unshift(user);
   }
 }

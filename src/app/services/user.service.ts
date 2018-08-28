@@ -1,4 +1,4 @@
-import { User } from "./../models/User";
+import { User } from "../models/User";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { of } from "rxjs/observable/of";
@@ -6,7 +6,7 @@ import { of } from "rxjs/observable/of";
 @Injectable({
   providedIn: "root"
 })
-export class DataService {
+export class UserService {
   users: User[];
   data: Observable<any>;
   constructor() {

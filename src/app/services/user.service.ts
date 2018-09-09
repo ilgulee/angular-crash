@@ -45,7 +45,7 @@ export class UserService {
     });
   }
 
-  getUsers():Observable<User[]> {
+  getUsers(): Observable<User[]> {
     return of(this.users);
   }
   addUser(user: User) {

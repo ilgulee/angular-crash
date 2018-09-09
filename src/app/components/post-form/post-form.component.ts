@@ -13,6 +13,8 @@ export class PostFormComponent implements OnInit {
   isEdit: boolean;
   @Output()
   newPost: EventEmitter<Post> = new EventEmitter();
+  @Output()
+  updatedPost: EventEmitter<Post> = new EventEmitter();
   constructor(private postService: PostService) {}
 
   ngOnInit() {}
@@ -29,6 +31,10 @@ export class PostFormComponent implements OnInit {
   }
 
   updatePost(){
-    console.log(123);
+    this.postService.updatePost(this.currentPost).subscribe(post=>{
+      console.log(post);
+      this.isEdit=false;
+      this.updatedPost.emit(post);
+    });
   }
 }
